@@ -10,11 +10,12 @@ import static com.assessment.azolachat.entity.DBConstants.CHAT_SCHEMA;
 
 @Data
 @Entity
-@Table(name = "user", schema = CHAT_SCHEMA)
+@Table(name = "chat_user", schema = CHAT_SCHEMA)
 public class User implements Serializable {
 
     @Id
-    @Column(name = "user_id")
+    @GeneratedValue
+    @Column(name = "user_id", unique = true)
     private String userId;
     private String username;
     private String password;
