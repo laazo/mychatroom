@@ -6,7 +6,7 @@ import com.assessment.azolachat.exception.ChatRoomException;
 
 public interface ChatRoomService {
     Chatroom createChatRoom(String chatRoomName) throws ChatRoomException;
-    Message sendMessage(long userId, String messageContent);
-    Message readMessage(long messageId);
+    Message sendMessage(long userId, long chatRoomId, String messageContent) throws ChatRoomException;
+    Message readMessage(long messageId) throws ChatRoomException;
     void deleteMessage(long messageId);
 }

@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import static com.assessment.azolachat.entity.DBConstants.CHAT_SCHEMA;
@@ -23,10 +22,10 @@ public class Message implements Serializable {
     private String messageContent;
 
     @Column(name = "user_id")
-    private String userId;
+    private long userId;
 
     @Column(name = "chatroom_id")
-    private String chatRoomId;
+    private long chatRoomId;
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "date_posted")
