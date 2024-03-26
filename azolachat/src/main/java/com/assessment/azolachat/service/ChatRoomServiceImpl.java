@@ -66,14 +66,19 @@ public class ChatRoomServiceImpl implements ChatRoomService {
     public Message readMessage(long messageId) throws ChatRoomException {
         Optional<Message> message = messageRepository.findById(messageId);
         if(message.isEmpty()) {
-            log.error("Exception occurred in readMessage:");
+            log.error("Exception occurred in readMessage: ");
             throw new ChatRoomException("Message does not exist");
         }
         return message.get();
     }
 
     @Override
-    public void deleteMessage(long messageId) {
-
+    public void deleteMessage(long messageId) throws ChatRoomException {
+        Optional<Message> message = messageRepository.findById(messageId);
+        if(message.isEmpty()) {
+            log.error("Exception occurred in deleteMessage: ");
+            throw new ChatRoomException("Message does not exist");
+        }
+        messageRepository.delete(message.get());
     }
 }

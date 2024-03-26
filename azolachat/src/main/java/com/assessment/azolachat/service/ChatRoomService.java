@@ -8,5 +8,5 @@ public interface ChatRoomService {
     Chatroom createChatRoom(String chatRoomName) throws ChatRoomException;
     Message sendMessage(long userId, long chatRoomId, String messageContent) throws ChatRoomException;
     Message readMessage(long messageId) throws ChatRoomException;
-    void deleteMessage(long messageId);
+    void deleteMessage(long messageId) throws ChatRoomException;
 }
