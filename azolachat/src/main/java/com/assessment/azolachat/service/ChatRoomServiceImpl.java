@@ -8,8 +8,6 @@ import com.assessment.azolachat.repo.ChatRoomRepository;
 import com.assessment.azolachat.repo.MessageRepository;
 import com.assessment.azolachat.repo.UserRepository;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -39,6 +37,16 @@ public class ChatRoomServiceImpl implements ChatRoomService {
         newChatRoom.setChatRoomName(chatRoomName);
         chatRoomRepository.save(newChatRoom);
         return newChatRoom;
+    }
+
+    @Override
+    public Chatroom getChatRoom(long chatRoomId) throws ChatRoomException {
+        Optional<Chatroom> chatroom = chatRoomRepository.findById(chatRoomId);
+        if(chatroom.isEmpty()) {
+            log.error("Exception occurred in getChatroom: {}", chatRoomId);
+            throw new ChatRoomException("Chat room does not exist");
+        }
+        return chatroom.get();
     }
 
     @Override
