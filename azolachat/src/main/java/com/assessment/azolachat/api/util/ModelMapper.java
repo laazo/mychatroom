@@ -41,10 +41,7 @@ public class ModelMapper {
     public static SendMessageResponse buildResponse(Message message) {
         if(message != null) {
             SendMessageResponse response = new SendMessageResponse();
-            response.setChatRoomId(message.getChatRoomId());
-            response.setUserId(message.getUserId());
-            response.setDatePosted(message.getDatePosted());
-            response.setMessageContent(message.getMessageContent());
+            BeanUtils.copyProperties(message, response);
             return response;
         }
         return null;

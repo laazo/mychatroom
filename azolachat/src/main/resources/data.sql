@@ -1,1 +1,2 @@
 insert into chat.chat_user (user_id, username, password) values(1, 'azola', '$2a$10$lM5z6qsE2kA5e7NXzSIij.jd/O3/j/WIIwssHU2RuaUTLDUbiVrWq');
+insert into chat.chat_room(chatroom_id, chatroom_name, date_created) values (1, 'NewChatRoom', CURRENT_TIMESTAMP());
