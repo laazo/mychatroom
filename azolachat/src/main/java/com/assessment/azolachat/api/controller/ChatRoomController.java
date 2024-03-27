@@ -3,7 +3,6 @@ package com.assessment.azolachat.api.controller;
 import com.assessment.azolachat.api.model.*;
 import com.assessment.azolachat.exception.ChatRoomException;
 import com.assessment.azolachat.service.ChatRoomService;
-import jakarta.websocket.server.PathParam;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;

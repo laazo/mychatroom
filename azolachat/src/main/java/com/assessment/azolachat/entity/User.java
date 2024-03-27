@@ -22,4 +22,5 @@ public class User implements Serializable {
 
     @OneToMany(cascade = CascadeType.DETACH, mappedBy = "user")
     private List<Message> messages;
+    //TODO: Attach roles to user
 }

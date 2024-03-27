@@ -40,6 +40,7 @@ public class ChatSecurityConfig {
                 .requestMatchers("/h2-console/**").permitAll()
                 .anyRequest().authenticated());
         httpSecurity.httpBasic(Customizer.withDefaults());
+        //TODO: H2 console screens currently not loading after login
         return httpSecurity.build();
     }
 

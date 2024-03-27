@@ -18,7 +18,6 @@ public class ChatRoomServiceImpl implements ChatRoomService {
 
     private final ChatRoomRepository chatRoomRepository;
     private final UserRepository userRepository;
-
     private final MessageRepository messageRepository;
 
     public ChatRoomServiceImpl(ChatRoomRepository chatRoomRepository, UserRepository userRepository, MessageRepository messageRepository) {
