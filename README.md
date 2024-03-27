@@ -4,7 +4,7 @@ MyChatroom is a simple REST API for a chatroom app
 * Java 17
 * Spring-Boot 3
 * H2
-### How to run the app
+### How to run the server
 1. open the terminal and CD into `azolachat/`
 2. In this directory you will find a script named _runchat.sh_
 3. Execute the script by typing `./runchat.sh` then press enter
